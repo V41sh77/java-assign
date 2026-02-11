@@ -64,3 +64,11 @@ public class Book {
     public void setAvailability(boolean status) {
         this.isAvailable = status;
     }
+ // Display book details
+    public void displayBookInfo() {
+        System.out.println("Title     : " + bookTitle);
+        System.out.println("Author    : " + bookAuthor);
+        System.out.println("ISBN      : " + bookIsbn);
+        System.out.println("Available : " + (isAvailable ? "Yes" : "No"));
+    }
+}
