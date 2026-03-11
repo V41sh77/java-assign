@@ -32,7 +32,7 @@ public class StudentValidatorLab {
        if (fullName.matches("[A-Za-z ]+")) {
         System.out.println("Valid name");
        } else {
-        System.out.println("Invalid nmae");
+        System.out.println("Invalid name");
        }
  
  
@@ -88,25 +88,39 @@ public class StudentValidatorLab {
  
         // STEP 7:
         // Ask user to enter a sentence
+        System.out.print("Enter a sentence: ");
+        String sentence = scanner.nextLine();
+
  
  
  
  
         // STEP 8:
         // Count vowels using Character class
+        int vowelCount = 0;
+
+        for (int i = 0; i < sentence.length(); i++) {
+            char ch = Character.toLowerCase(sentence.charAt(i));
+
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')  {
+                vowelCount++;
+            }
+        }
  
- 
- 
+        System.out.println("Number of vowels: " + vowelCount);
  
         // STEP 9:
         // Reverse sentence using StringBuilder
- 
+    String reversedSentence = new StringBuilder(sentence).reverse().toString();
+        System.out.println("Reversed sentence: " + reversedSentence);
  
  
  
         // STEP 10:
         // Replace all digits in sentence with '*'
- 
+    String replacedDigits = sentence.replaceAll("\\d", "*");
+        System.out.println("Sentence after replacing digits: " + replacedDigits);
+
  
  
  
@@ -119,8 +133,13 @@ public class StudentValidatorLab {
         // Create string: "Math,Science,Java,English"
         // Split using comma
         // Print each course
- 
- 
+     String courses = "Math,Science,Java,English";
+        String[] courseArray = courses.split(",");
+
+        System.out.println("Courses:");
+        for (String course : courseArray) {
+            System.out.println(course);
+        }
  
  
         // =====================================================
@@ -136,6 +155,6 @@ public class StudentValidatorLab {
  
  
         scanner.close();
+    
     }
-}
  
